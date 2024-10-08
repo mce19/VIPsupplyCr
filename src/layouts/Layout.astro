@@ -1,23 +1,42 @@
 ---
 import Footer from "../components/elements/Footer.astro";
 import Navbar from "../components/elements/Navbar.astro";
+import siteConfig from '../data/site-config';
+import BaseHead, { type Props as HeadProps } from '../components/BaseHead.astro';
 
 export interface Props {
-  title: string;
+  title?: string;
+  description?: string;
+  image?: { src: string; alt?: string };
+  pageType?: 'website' | 'article';
 }
 
-const { title } = Astro.props;
+const { description = '', image = siteConfig.image, pageType = 'website' } = Astro.props;
+const title = [Astro.props.title, siteConfig.title].filter(Boolean).join(' | ');
+const resolvedImage = image?.src
+    ? {
+          src: new URL(image.src, Astro.site).toString(),
+          alt: image.alt
+      }
+    : undefined;
+const canonicalURL = new URL(Astro.request.url, Astro.site);
+
+
+export type Props = HeadProps & { showHeader?: boolean };
+
+const { showHeader = true, ...head } = Astro.props;
+
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="description" content="AgenceX - SEO Agency website landing page made with ASTROJS and TAILWINDCSS">
-    <title>AgenceX - {title}</title>
+    <BaseHead {...head} />
+        <script>
+            if (localStorage.theme === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+        </script>
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
