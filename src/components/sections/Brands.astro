@@ -12,14 +12,29 @@ import Title from "../shared/Title.astro";
             </Title>
         </div>
         <div class="flex justify-center flex-wrap gap-4">
-           
+    <!-- Imagen principal -->
+    <div class="w-full md:w-1/2 lg:w-1/3">
+        <img src="/images/certificado.jpg" alt="Texto alternativo de la imagen principal" class="mx-auto max-w-full h-auto rounded-lg shadow-lg" />
+    </div>
 
-           <!--Imagen-->
-           <div class="w-full md:w-1/2 lg:w-1/3">
-                <img src="/images/certificado.jpg" alt="Texto alternativo de la imagen" class="mx-auto max-w-full h-auto rounded-lg shadow-lg" />
-            </div>
-           
-           
+    <!-- Contenedor de imágenes adicionales -->
+    <div class="w-full flex justify-center gap-4 mt-4">
+        <!-- Imagen adicional 1 -->
+        <div class="w-24 h-24">
+            <img src="/images/original.png" alt="Texto alternativo imagen 1" class="mx-auto w-full h-full rounded-full shadow-lg object-cover" />
         </div>
+
+        <!-- Imagen adicional 2 -->
+        <div class="w-24 h-24">
+            <img src="/images/satisfaccion.png" alt="Texto alternativo imagen 2" class="mx-auto w-full h-full rounded-full shadow-lg object-cover" />
+        </div>
+
+        <!-- Imagen adicional 3 -->
+        <div class="w-24 h-24">
+            <img src="/images/exclusivo.png" alt="Texto alternativo imagen 3" class="mx-auto w-full h-full rounded-full shadow-lg object-cover" />
+        </div>
+    </div>
+   </div>
+
     </Container>
 </section>

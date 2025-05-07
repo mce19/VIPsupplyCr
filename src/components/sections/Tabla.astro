@@ -1,0 +1,89 @@
+---
+import Info from "../cards/Info.astro";
+import Container from "../shared/Container.astro";
+import Paragraph from "../shared/Paragraph.astro";
+import Title from "../shared/Title.astro";
+
+---
+<section id="tabla">
+    <Container className="flex flex-col midmd:flex-row gap-10 lg:gap-12">
+
+       <div class="flex-1 flex midmd:w-7/12 lg:w-1/2 flex-col">
+    <Title>
+        Tabla informativa
+    </Title>
+     <p class="mt-4 text-heading-3 ">
+                Consulta las cantidades y tiempos de aplicación del producto según tu tipo de cabello.
+    </p>
+    <!-- Tabla en lugar de la lista -->
+    <table class="mt-4 w-full font-medium border-collapse bg-gray-50 shadow-md rounded-lg">
+        <thead>
+            <tr>
+                <th class="px-6 py-3 text-left">Cantidad de producto a aplicar según el largo del cabello:</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="border-t">
+                <td class="px-6 py-3">Corto, hasta los hombros: 2 onzas</td>
+            </tr>
+            <tr class="border-t">
+                <td class="px-6 py-3">A media espalda, por el brasiere: 4 onzas</td>
+            </tr>
+            <tr class="border-t">
+                <td class="px-6 py-3">Largo y abundante para abajo del brasiere: 6 onzas</td>
+            </tr>
+        </tbody>
+
+        <thead>
+            <tr>
+                <th class="px-6 py-3 text-left">Tiempo de pose según el tipo de cabello:</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="border-t">
+                <td class="px-6 py-3">Decolorado-procesado: 45 minutos</td>
+            </tr>
+            <tr class="border-t">
+                <td class="px-6 py-3">Teñido-Normal: 60 minutos</td>
+            </tr>
+            <tr class="border-t">
+                <td class="px-6 py-3">Grueso-Afro: 90 minutos</td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+                <th class="px-6 py-3 text-left">Porcentaje de lavado del producto según el tipo de cabello:</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="border-t">
+                <td class="px-6 py-3">Decolorado-Procesado: 70%</td>
+            </tr>
+            <tr class="border-t">
+                <td class="px-6 py-3">Teñido-Normal: 50%</td>
+            </tr>
+            <tr class="border-t">
+                <td class="px-6 py-3">Grueso-Afro: 30%</td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+                <th class="px-6 py-3 text-left">Temperatura de la plancha, según el tipo de cabello:</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="border-t">
+                <td class="px-6 py-3">Decolorado-Procesado: 148.8 °C a 176.6 °C / 300 °F a 350 °F</td>
+            </tr>
+            <tr class="border-t">
+                <td class="px-6 py-3">Teñido-Normal: 176.6 °C a 204.4 °C / 350 °F a 400°</td>
+            </tr>
+            <tr class="border-t">
+                <td class="px-6 py-3">Grueso-Afro: 204.4 °C a 232.2 °C / 400 °F a 450°</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+    </Container>
+</section>
+
