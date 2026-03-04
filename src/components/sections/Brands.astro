@@ -1,40 +1,101 @@
 ---
 import Container from "../shared/Container.astro";
 import Title from "../shared/Title.astro";
-
 ---
 
-<section>
-    <Container className="space-y-8">
-        <div class="text-center max-w-3xl mx-auto">
+<section class="py-12 relative overflow-hidden">
+    
+    <div class="absolute inset-0 flex justify-center items-center -z-10 opacity-30 pointer-events-none">
+        <div class="w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]"></div>
+    </div>
+
+    <Container className="space-y-10">
+        
+        <div class="text-center max-w-2xl mx-auto">
             <Title>
-                Certificado de distribuidor
+                <span class="text-gray-900 dark:text-white">Garantía y</span> 
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-yellow-400 dark:from-yellow-400 dark:to-yellow-200">
+                    Confianza
+                </span>
             </Title>
-        </div>
-        <div class="flex justify-center flex-wrap gap-4">
-    <!-- Imagen principal -->
-    <div class="w-full md:w-1/2 lg:w-1/3">
-        <img src="/certificado/certifi.jpg" alt="Texto alternativo de la imagen principal" class="mx-auto max-w-full h-auto rounded-lg shadow-lg" />
-    </div>
-
-    <!-- Contenedor de imágenes adicionales -->
-    <div class="w-full flex justify-center gap-4 mt-4">
-        <!-- Imagen adicional 1 -->
-        <div class="w-24 h-24">
-            <img src="/images/original.png" alt="Texto alternativo imagen 1" class="mx-auto w-full h-full rounded-full shadow-lg object-cover" />
+            <p class="mt-4 text-gray-600 dark:text-gray-400 font-medium">
+                Somos distribuidores autorizados. Tu inversión y tu cabello están en manos expertas.
+            </p>
         </div>
 
-        <!-- Imagen adicional 2 -->
-        <div class="w-24 h-24">
-            <img src="/images/satisfaccion.png" alt="Texto alternativo imagen 2" class="mx-auto w-full h-full rounded-full shadow-lg object-cover" />
-        </div>
+        <div class="p-8 rounded-3xl bg-white/50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700 backdrop-blur-sm shadow-xl dark:shadow-black/20">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8 items-start">
 
-        <!-- Imagen adicional 3 -->
-        <div class="w-24 h-24">
-            <img src="/images/exclusivo.png" alt="Texto alternativo imagen 3" class="mx-auto w-full h-full rounded-full shadow-lg object-cover" />
+                <div class="group flex flex-col items-center text-center transition-transform duration-300 hover:-translate-y-1">
+                    <div class="relative w-28 h-28 mb-4 cursor-pointer" onclick="document.getElementById('modal-cert').showModal()">
+                        <div class="absolute inset-0 bg-yellow-600/20 rounded-full blur-xl group-hover:bg-yellow-600/30 transition-all"></div>
+                        
+                        <div class="relative w-full h-full rounded-full bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-700 flex flex-col items-center justify-center shadow-lg group-hover:border-yellow-400 transition-colors duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.13 3.13 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.13 3.13 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.13-3.13 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.13-3.13z" />
+                            </svg>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-yellow-600 dark:text-yellow-400 -mt-1 group-hover:scale-110 transition-transform">
+                                Ver
+                            </span>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Distribuidor</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+                        Certificación oficial que avala nuestra legitimidad.
+                    </p>
+                    <button class="mt-2 text-xs font-semibold text-yellow-600 dark:text-yellow-400 underline hover:text-yellow-700" onclick="document.getElementById('modal-cert').showModal()">
+                        Ver Certificado Oficial
+                    </button>
+                </div>
+
+                <div class="group flex flex-col items-center text-center transition-transform duration-300 hover:-translate-y-1">
+                    <div class="relative w-28 h-28 mb-4">
+                        <div class="absolute inset-0 bg-blue-500/20 rounded-full blur-xl group-hover:bg-blue-500/30 transition-all"></div>
+                        <img src="/images/original.png" alt="Sello de Producto Original" class="relative w-full h-full object-contain drop-shadow-lg" />
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">100% Original</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+                        Producto auténtico garantizado, directo de fábrica.
+                    </p>
+                </div>
+
+                <div class="group flex flex-col items-center text-center transition-transform duration-300 hover:-translate-y-1">
+                    <div class="relative w-28 h-28 mb-4">
+                        <div class="absolute inset-0 bg-green-500/20 rounded-full blur-xl group-hover:bg-green-500/30 transition-all"></div>
+                        <img src="/images/satisfaccion.png" alt="Garantía de Satisfacción" class="relative w-full h-full object-contain drop-shadow-lg" />
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Satisfacción</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+                        Miles de clientas felices y resultados comprobados.
+                    </p>
+                </div>
+
+                <div class="group flex flex-col items-center text-center transition-transform duration-300 hover:-translate-y-1">
+                    <div class="relative w-28 h-28 mb-4">
+                        <div class="absolute inset-0 bg-purple-500/20 rounded-full blur-xl group-hover:bg-purple-500/30 transition-all"></div>
+                        <img src="/images/exclusivo.png" alt="Distribuidor Exclusivo" class="relative w-full h-full object-contain drop-shadow-lg" />
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Garantía</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+                        Distribución segura y legal para todo Costa Rica.
+                    </p>
+                </div>
+
+            </div>
         </div>
-    </div>
-   </div>
 
     </Container>
+
+    <dialog id="modal-cert" class="rounded-xl p-0 border-none shadow-2xl backdrop:bg-black/60 outline-none">
+        <div class="flex flex-col items-center bg-white dark:bg-gray-900 p-6 rounded-xl max-w-lg relative">
+            <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:hover:text-white transition-colors" onclick="document.getElementById('modal-cert').close()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l18 18" />
+                </svg>
+            </button>
+            <img src="/images/autorizado.jpeg" alt="Certificado en grande" class="max-w-full max-h-[75vh] rounded-lg border border-gray-100 dark:border-gray-800 shadow-sm mt-4" />
+            <p class="mt-4 text-gray-500 text-sm font-medium">Certificado de Distribución Oficial</p>
+        </div>
+    </dialog>
 </section>

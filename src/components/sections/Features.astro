@@ -3,60 +3,124 @@ import Container from "../shared/Container.astro";
 import Paragraph from "../shared/Paragraph.astro";
 import Title from "../shared/Title.astro";
 
+// Definimos el ícono SVG de check para usarlo con set:html, que es más limpio que repetir el SVG
+const CheckIcon = `<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>`;
 ---
 
-<section id="caracterist">
-    <Container className="flex flex-col midmd:flex-row gap-10 lg:gap-12">
+<section id="caracterist" class="py-16 md:py-24">
+    <Container className="flex flex-col midmd:flex-row gap-12 lg:gap-20 items-center">
         
         <div class="flex-1 flex midmd:w-7/12 lg:w-1/2 flex-col">
             <Title>
-                Características
+                <span class="text-gray-900 dark:text-white">Fórmula y</span> 
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500 dark:from-emerald-400 dark:to-teal-300">
+                    Beneficios Clave
+                </span>
             </Title>
-          <!--  <Paragraph className="mt-8">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                <br> 
-                Minus, saepe aliquid autem alias vero distinctio dignissimos consequatur?
-            </Paragraph>
-            <Paragraph className="mt-2">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus, saepe aliquid autem alias vero distinctio dignissimos consequatur?
-            </Paragraph>   -->
-            <ul class="mt-8 space-y-4 text-heading-3 font-medium">
-                <li>
-                    <span class="font-bold bg-box-bg rounded-full w-8 h-8 mr-3 text-primary inline-flex justify-center items-center">&checkmark;</span> Alacia al 100%
+            
+            <ul class="mt-8 space-y-6 font-medium">
+                
+                <li class="flex items-start text-lg group">
+                    <span class="inline-flex justify-center items-center w-7 h-7 mr-4 flex-shrink-0 
+                                 bg-emerald-100 dark:bg-emerald-900/30 rounded-full 
+                                 text-emerald-600 dark:text-emerald-400 
+                                 font-bold transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-emerald-500/20"
+                          set:html={CheckIcon}>
+                    </span>
+                    <span class="text-gray-700 dark:text-gray-300 leading-relaxed transition-colors duration-300 group-hover:text-gray-900 dark:group-hover:text-white">
+                        Alacia al 100% de forma progresiva y duradera.
+                    </span>
                 </li>
-                <li>
-                    <span class="font-bold bg-box-bg rounded-full w-8 h-8 mr-3 text-primary inline-flex justify-center items-center">&checkmark;</span> Contiene Vitamina A, Omega 6 y 9.
+
+                <li class="flex items-start text-lg group">
+                    <span class="inline-flex justify-center items-center w-7 h-7 mr-4 flex-shrink-0 
+                                 bg-emerald-100 dark:bg-emerald-900/30 rounded-full 
+                                 text-emerald-600 dark:text-emerald-400 
+                                 font-bold transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-emerald-500/20"
+                          set:html={CheckIcon}>
+                    </span>
+                    <span class="text-gray-700 dark:text-gray-300 leading-relaxed transition-colors duration-300 group-hover:text-gray-900 dark:group-hover:text-white">
+                        Contiene Vitamina A, Omega 6 y 9 para nutrición profunda.
+                    </span>
                 </li>
-                <li>
-                    <span class="font-bold bg-box-bg rounded-full w-8 h-8 mr-3 text-primary inline-flex justify-center items-center">&checkmark;</span> No contiene formol.
+
+                <li class="flex items-start text-lg group">
+                    <span class="inline-flex justify-center items-center w-7 h-7 mr-4 flex-shrink-0 
+                                 bg-emerald-100 dark:bg-emerald-900/30 rounded-full 
+                                 text-emerald-600 dark:text-emerald-400 
+                                 font-bold transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-emerald-500/20"
+                          set:html={CheckIcon}>
+                    </span>
+                    <span class="text-gray-700 dark:text-gray-300 leading-relaxed transition-colors duration-300 group-hover:text-gray-900 dark:group-hover:text-white">
+                        ¡Totalmente libre de Formol! Sin vapores tóxicos.
+                    </span>
                 </li>
-                <li>
-                    <span class="font-bold bg-box-bg rounded-full w-8 h-8 mr-3 text-primary inline-flex justify-center items-center">&checkmark;</span> Compatible con cualquier químico.
+
+                <li class="flex items-start text-lg group">
+                    <span class="inline-flex justify-center items-center w-7 h-7 mr-4 flex-shrink-0 
+                                 bg-emerald-100 dark:bg-emerald-900/30 rounded-full 
+                                 text-emerald-600 dark:text-emerald-400 
+                                 font-bold transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-emerald-500/20"
+                          set:html={CheckIcon}>
+                    </span>
+                    <span class="text-gray-700 dark:text-gray-300 leading-relaxed transition-colors duration-300 group-hover:text-gray-900 dark:group-hover:text-white">
+                        Compatible con cualquier tratamiento o químico previo (tintes, mechas, etc.).
+                    </span>
                 </li>
-                <li>
-                    <span class="font-bold bg-box-bg rounded-full w-8 h-8 mr-3 text-primary inline-flex justify-center items-center">&checkmark;</span> Apto para cualquier tipo de cabello
+
+                <li class="flex items-start text-lg group">
+                    <span class="inline-flex justify-center items-center w-7 h-7 mr-4 flex-shrink-0 
+                                 bg-emerald-100 dark:bg-emerald-900/30 rounded-full 
+                                 text-emerald-600 dark:text-emerald-400 
+                                 font-bold transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-emerald-500/20"
+                          set:html={CheckIcon}>
+                    </span>
+                    <span class="text-gray-700 dark:text-gray-300 leading-relaxed transition-colors duration-300 group-hover:text-gray-900 dark:group-hover:text-white">
+                        Apto para cualquier tipo de cabello, desde afro hasta teñido.
+                    </span>
                 </li>
-                <li>
-                    <span class="font-bold bg-box-bg rounded-full w-8 h-8 mr-3 text-primary inline-flex justify-center items-center">&checkmark;</span> Se puede aplicar en mujeres embarazadas o en periodo de lactancia.
+                
+                <li class="flex items-start text-lg group">
+                    <span class="inline-flex justify-center items-center w-7 h-7 mr-4 flex-shrink-0 
+                                 bg-emerald-100 dark:bg-emerald-900/30 rounded-full 
+                                 text-emerald-600 dark:text-emerald-400 
+                                 font-bold transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-emerald-500/20"
+                          set:html={CheckIcon}>
+                    </span>
+                    <span class="text-gray-700 dark:text-gray-300 leading-relaxed transition-colors duration-300 group-hover:text-gray-900 dark:group-hover:text-white">
+                        Mezcla única de ácidos orgánicos, aceites y extractos vegetales.
+                    </span>
                 </li>
-                <li>
-                    <span class="font-bold bg-box-bg rounded-full w-8 h-8 mr-3 text-primary inline-flex justify-center items-center">&checkmark;</span> Mezcla de ácidos orgánicos de origen vegetal, aceites y extractos que aportan hidratación y nutrición al cabello.
-                </li>
-                <li>
-                    <span class="font-bold bg-box-bg rounded-full w-8 h-8 mr-3 text-primary inline-flex justify-center items-center">&checkmark;</span> Aporta brillo y sedosidad. Pero no es reconstructor de un cabello dañado.
+                
+                <li class="flex items-start text-lg group">
+                    <span class="inline-flex justify-center items-center w-7 h-7 mr-4 flex-shrink-0 
+                                 bg-emerald-100 dark:bg-emerald-900/30 rounded-full 
+                                 text-emerald-600 dark:text-emerald-400 
+                                 font-bold transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-emerald-500/20"
+                          set:html={CheckIcon}>
+                    </span>
+                    <span class="text-gray-700 dark:text-gray-300 leading-relaxed transition-colors duration-300 group-hover:text-gray-900 dark:group-hover:text-white">
+                        Aporta brillo espejo y sedosidad, mejorando la textura capilar.
+                    </span>
                 </li>
             </ul>
         </div>
 
-        <div class="max-w-md mx-auto midmd:max-w-none lg:mx-0  lg:pr-10 xl:pr-2 flex-1 flex w-11/12 midmd:w-5/12 lg:w-1/2 midmd:h-auto">
-            <div class="w-full h-80 sm:h-96 midmd:h-full relative">
-                <div class="absolute rotate-45 -left-5 md:-left-10 lg:-left-20 xl:-left-24 p-1 top-1/2 w-16 h-16 bg-gradient-to-br from-primary to-orange-400 blur-3xl opacity-50"></div>
-                <div class="absolute  p-1 -top-4 md:-top-10 right-0 w-20 h-20 bg-gradient-to-br from-primary to-orange-400 rounded-full blur-3xl opacity-60"></div>
+        <div class="max-w-md mx-auto midmd:max-w-none lg:mx-0 flex-1 flex w-11/12 midmd:w-5/12 lg:w-1/2 midmd:h-auto">
+            <div class="w-full h-80 sm:h-96 midmd:h-full relative flex items-center justify-center">
                 
-                <span class="absolute w-full aspect-[16/5] -skew-x-12 rounded-full bg-gradient-to-tr from-primary to-green-400 opacity-40 blur-2xl left-0 bottom-0"></span>
-                <img class="rounded-lg" src={"/images/UNIKA.jpg"} alt="banner image" 
-                width="1240" height="1385"
-                class=" w-auto left-1/2 -translate-x-1/2 absolute bottom-0 max-h-full" />
+                <div class="absolute inset-0 bg-gradient-to-br from-emerald-600/10 to-teal-400/10 dark:from-emerald-900/30 dark:to-teal-900/30 rounded-[3rem] blur-3xl transform rotate-1 scale-105 transition-all duration-700"></div>
+
+                <div class="relative w-full h-full p-4 midmd:p-0">
+                     <img 
+                        class="w-auto h-full object-contain mx-auto relative z-10 
+                               rounded-2xl shadow-2xl shadow-black/20 dark:shadow-emerald-900/30 transition-transform duration-700 hover:scale-[1.02]" 
+                        src={"/images/products.jpeg"} 
+                        alt="Producto Nanoplastia UNIKA" 
+                        width="1240" 
+                        height="1385"
+                    />
+                </div>
             </div>
         </div>
     </Container>
